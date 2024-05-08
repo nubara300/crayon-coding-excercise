@@ -6,8 +6,14 @@ This repository contains the codebase for the Cloud Sales System, an application
 The system is built on the .NET stack, with a focus on backend development using C#.
 
 ## Tech stack
-- [.NET 7](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) - Web Api
+- [.NET 8](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) - Web Api
 - [.SQL SERVER](https://www.microsoft.com/en-us/sql-server/sql-server-downloads) - Database
+
+## How to run:
+1. You need visual studio installed on your machine
+
+
+
 
 ## Project Structure
 
