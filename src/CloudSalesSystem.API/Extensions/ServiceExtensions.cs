@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.OpenApi.Models;
 using System.IO.Compression;
+using System.Reflection;
 
 namespace CloudSalesSystem.API.Extensions;
 
@@ -40,9 +41,9 @@ public static class ServiceExtensions
         {
             c.SwaggerDoc("v1", new OpenApiInfo { Title = "Cloud System Solutions API", Version = "v1" });
 
-            //var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-            //var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-            //c.IncludeXmlComments(xmlPath);
+            string xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+            string xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+            c.IncludeXmlComments(xmlPath);
 
             // Example of Adding authoriation to JWT Authentication to Swagger
             //c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme

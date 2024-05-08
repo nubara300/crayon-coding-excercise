@@ -1,0 +1,21 @@
+# version: '3.4'
+
+# services:
+#   cloudsalessystem.api:
+#     image: ${DOCKER_REGISTRY-}cloudsalessystemapi
+#     build:
+#       context: .
+#       dockerfile: src/CloudSalesSystem.Api/Dockerfile
+#   ccp.api:
+#     image: ${DOCKER_REGISTRY-}cloudproviderapi
+#     build:
+#       context: .
+#       dockerfile: src/CCPService/Dockerfile
+
+#   # cloud-sales-system-db:
+#   #   image: mcr.microsoft.com/mssql/server:2019-latest
+#   #   environment:
+#   #     SA_PASSWORD: "sa2024!"
+#   #     ACCEPT_EULA: "Y"
+#   #   ports:
+#   #     - "1433:1433"

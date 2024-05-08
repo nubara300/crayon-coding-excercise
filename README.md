@@ -10,9 +10,9 @@ The system is built on the .NET stack, with a focus on backend development using
 - [.SQL SERVER](https://www.microsoft.com/en-us/sql-server/sql-server-downloads) - Database
 
 ## How to run:
-1. You need visual studio installed on your machine
-
-
+1. You need Visual Studio 2022 installed on your machine. 
+2. Setup and start mutliple startup project, where you will run both CloudSalesSystem.API and CCpService (this is mock for cloud provider)
+3. At startup DB will be created on local instance of SQL server
 
 
 ## Project Structure
