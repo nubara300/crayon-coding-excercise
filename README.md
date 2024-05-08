@@ -62,8 +62,10 @@ The system is built on the .NET stack, with a focus on backend development using
 
 - Swashbuckle.AspNetCore 6.4.0
 
+## Database Model
+![Image Description](./docs/Database.png)
 
-##Future improvments
+###Future improvements
 - Implement Docker for containerization.
 - Integrate pipeline behaviors for MediatR, including logging and validation pipelines.
 - Incorporate Serilog for logging, configuring log levels for both development and production environments.
@@ -77,3 +79,4 @@ The system is built on the .NET stack, with a focus on backend development using
 - Provide a Postman collection for Quality Assurance (QA) testing.
 - Incorporate concurrency timestamps where necessary.
 - Integrate identity management functionality.
+

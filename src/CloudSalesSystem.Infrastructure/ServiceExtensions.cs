@@ -11,6 +11,7 @@ using CloudSalesSystem.Domain.Interfaces.Cache;
 using CloudSalesSystem.Infrastructure.Caching;
 using CloudSalesSystem.Domain.Interfaces.ServiceContext;
 using CloudSalesSystem.Infrastructure.ServiceContexts;
+using CloudSalesSystem.Infrastructure.Configuration;
 
 namespace CloudSalesSystem.Infrastructure;
 
@@ -31,6 +32,8 @@ public static class ServiceExtensions
 
     public static void ConfigureContext(this IServiceCollection services, IConfiguration configuration)
     {
+        services.AddTransient<IDatabaseInitializer, DatabaseInitializer>();
+
         services.AddDbContext<AppDbContext>(options =>
         {
             options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
@@ -57,6 +60,7 @@ public static class ServiceExtensions
         .AddPolicyHandler(GetRetryPolicy())
         .AddPolicyHandler(GetCircuitBreakerPolicy());
     }
+
 
     private static IAsyncPolicy<HttpResponseMessage> GetRetryPolicy() => HttpPolicyExtensions
             .HandleTransientHttpError()

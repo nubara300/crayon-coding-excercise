@@ -7,9 +7,6 @@ public class RevokeSoftwareLicenceValidator : AbstractValidator<RevokeSoftwareLi
 {
     public RevokeSoftwareLicenceValidator()
     {
-        RuleFor(x => x.ServiceId).NotNull();
         RuleFor(x => x.SubscriptionId).NotNull();
-        //RuleFor(x => x.Quantity).NotNull().GreaterThan(0);
-        //RuleFor(x => x.ValidToDate).NotNull().GreaterThan(DateOnly.FromDateTime(DateTime.UtcNow));
     }
 }

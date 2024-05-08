@@ -29,6 +29,8 @@ builder.Services.AddHttpContextAccessor();
 
 WebApplication app = builder.Build();
 
+await app.MigrateDatabaseAsync();
+
 app.UseSwagger();
 app.UseSwaggerUI(c =>
    c.SwaggerEndpoint("/swagger/v1/swagger.json", "CloudSalesSystem.REST v1.1"));
