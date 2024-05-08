@@ -1,0 +1,6 @@
+@CCPService_HostAddress = http://localhost:5222
+
+GET {{CCPService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

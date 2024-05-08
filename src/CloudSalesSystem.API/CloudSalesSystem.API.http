@@ -1,0 +1,6 @@
+@CloudSalesSystem.API_HostAddress = http://localhost:5237
+
+GET {{CloudSalesSystem.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
