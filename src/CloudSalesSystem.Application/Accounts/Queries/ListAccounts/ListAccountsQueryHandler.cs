@@ -6,7 +6,7 @@ using MediatR;
 
 namespace CloudSalesSystem.Application.Accounts.Queries.ListAccounts;
 
-internal sealed class ListAccountsQueryHandler : IRequestHandler<ListAccountsQuery, PaginationResponse<AccountDto>>
+public sealed class ListAccountsQueryHandler : IRequestHandler<ListAccountsQuery, PaginationResponse<AccountDto>>
 {
     private readonly IServiceContext _serviceContext;
     private readonly IUnitOfWork _unitOfWork;

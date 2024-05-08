@@ -3,7 +3,7 @@ using CloudSalesSystem.Domain.Models.Customers;
 
 namespace CloudSalesSystem.Domain
 {
-    public static class CLoudSalesConstants
+    public static class CloudSalesConstants
     {
         public static readonly Guid CustomerId = new("b3fd58c6-03e6-4769-a3b7-892d12574111");
 
@@ -18,5 +18,6 @@ namespace CloudSalesSystem.Domain
         public static readonly Account Account3 = Account.Create(AccountId3, CustomerId, "Account3", "AccDesc3");
 
         public static readonly List<Account> Accounts = [Account1, Account2, Account3];
+
     }
 }

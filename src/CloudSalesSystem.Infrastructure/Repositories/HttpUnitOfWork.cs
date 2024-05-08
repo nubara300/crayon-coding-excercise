@@ -9,7 +9,7 @@ public class HttpUnitOfWork : UnitOfWork
     {
         // example of retrieveng the user id from context and claims
         // var id = httpAccessor.HttpContext?.User.FindFirst("jti")?.Value?.Trim();
-        var id = CLoudSalesConstants.CustomerId.ToString();
+        var id = CloudSalesConstants.CustomerId.ToString();
         if (string.IsNullOrWhiteSpace(id))
         {
             throw new UnauthorizedAccessException("User id is missing from the context!");

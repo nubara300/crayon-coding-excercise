@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CloudSalesSystem.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240508115449_Initial")]
+    [Migration("20240508164749_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -57,12 +57,6 @@ namespace CloudSalesSystem.Infrastructure.Migrations
                         .IsRequired()
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
-
-                    b.Property<byte[]>("Version")
-                        .IsConcurrencyToken()
-                        .IsRequired()
-                        .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("rowversion");
 
                     b.HasKey("Id");
 
@@ -134,12 +128,6 @@ namespace CloudSalesSystem.Infrastructure.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
-                    b.Property<byte[]>("Version")
-                        .IsConcurrencyToken()
-                        .IsRequired()
-                        .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("rowversion");
-
                     b.HasKey("Id");
 
                     b.HasIndex("CreatedById");
@@ -188,12 +176,6 @@ namespace CloudSalesSystem.Infrastructure.Migrations
                     b.Property<Guid>("ServiceSubscriptionId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<byte[]>("Version")
-                        .IsConcurrencyToken()
-                        .IsRequired()
-                        .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("rowversion");
-
                     b.HasKey("Id");
 
                     b.HasIndex("CreatedById");
@@ -232,6 +214,9 @@ namespace CloudSalesSystem.Infrastructure.Migrations
                     b.Property<Guid?>("ModifiedById")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
@@ -243,14 +228,14 @@ namespace CloudSalesSystem.Infrastructure.Migrations
                     b.Property<Guid>("SubscriptionId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateOnly>("ValidToDate")
-                        .HasColumnType("date");
+                    b.Property<Guid>("TransactionId")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<byte[]>("Version")
-                        .IsConcurrencyToken()
-                        .IsRequired()
-                        .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("rowversion");
+                    b.Property<DateTime>("TransactionTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("ValidToDate")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 

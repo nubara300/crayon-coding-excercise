@@ -15,6 +15,6 @@ public class CustomerMapping : IEntityTypeConfiguration<Customer>
 
         // Seed data on migration, we could also introduce DBInitialize,
         // where we would seed during runtime of the app
-        builder.HasData(CLoudSalesConstants.Customer);
+        builder.HasData(CloudSalesConstants.Customer);
     }
 }

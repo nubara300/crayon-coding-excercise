@@ -18,6 +18,4 @@ public class BaseEntity<TId> : IBaseAuditableEntity
     public Customer CreatedBy { get; set; }
     public Guid? ModifiedById { get; set; }
     public Customer? ModifiedBy { get; set; }
-    [Timestamp]
-    public byte[] Version { get; set; }
 }

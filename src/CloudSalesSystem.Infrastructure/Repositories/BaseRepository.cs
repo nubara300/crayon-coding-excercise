@@ -30,7 +30,7 @@ namespace CloudSalesSystem.Infrastructure.Repositories
         public Task<TEntity?> FirstOrDefaultAsync(Expression<Func<TEntity, bool>> expression)
             => _entities.FirstOrDefaultAsync(expression);
 
-        public async Task<TEntity?> GetByIdAsync(int id)
+        public async Task<TEntity?> GetByIdAsync(Guid id)
             => await _entities.FindAsync(id);
 
         public Task<List<TEntity>> GetListAsync()

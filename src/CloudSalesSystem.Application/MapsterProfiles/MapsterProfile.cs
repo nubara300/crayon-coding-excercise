@@ -1,18 +1,14 @@
-﻿using CloudSalesSystem.Application.CloudComputingService.Models;
+﻿using CloudSalesSystem.Application.SoftwareServices;
 using CloudSalesSystem.Domain.Models.ServiceSubscriptions;
 using Mapster;
 
-namespace CloudSalesSystem.Application.MapsterProfiles
+namespace CloudSalesSystem.Application.MapsterProfiles;
+public class MapsterProfile : IRegister
 {
-    public class MapsterProfile : IRegister
+    public void Register(TypeAdapterConfig config)
     {
-        public void Register(TypeAdapterConfig config)
-        {
-            // Define your mappings here
-            config.NewConfig<OrderServiceResponse, ServiceSubscription>()
-                .Map(dest => dest.Quantity, opt => opt.PurchasedSoftware.Quantity)
-                .Map(dest => dest.TransactionId, opt => opt.PurchasedSoftware.TransactionId)
-                .Map(dest => dest.TransactionTime, opt => opt.PurchasedSoftware.TransactionTime);
-        }
+        // Define your mappings here
+        config.NewConfig<ServiceSubscription, SoftwareServiceDto>()
+            .Map(dest => dest.AvailableLicenses, opt => opt.Licenses.Count);
     }
 }

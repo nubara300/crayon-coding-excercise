@@ -23,6 +23,7 @@ internal sealed class ListAccountSubscriptionsHandler : IRequestHandler<ListAcco
         var customerId = _serviceContext.GetCurrentUserId();
         var response = await _unitOfWork.ServiceSubscriptions.GetByCustomerId(customerId);
 
+        // ToDo missing mappings configuration to add license count to the response
         return new PaginationResponse<SoftwareServiceDto>
         {
             Items = response.Adapt<List<SoftwareServiceDto>>(),

@@ -4,5 +4,4 @@ using System.ComponentModel.DataAnnotations;
 namespace CloudSalesSystem.Application.SoftwareServices.Commands.UpdateSoftwareLicenceQuantity;
 
 public sealed record UpdateSoftwareLicenceQuantityCommand(
-[Required] Guid SubscriptionId,
-[Required] Guid ServiceId) : IRequest<UpdateSoftwareLicenceQuantityResponse>;
+[Required] Guid SubscriptionId, int NewQuantity) : IRequest<UpdateSoftwareLicenceQuantityResponse>;

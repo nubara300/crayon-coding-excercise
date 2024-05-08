@@ -14,7 +14,8 @@ public sealed class ServiceSubscription : BaseEntity<Guid>, IDomainEvents
     string softwareServiceName,
     DateTime validToDate,
     Guid transactionId,
-    DateTime transactionTime)
+    DateTime transactionTime,
+    decimal price)
     : base(id)
     {
         AccountId = accountId;
@@ -23,6 +24,7 @@ public sealed class ServiceSubscription : BaseEntity<Guid>, IDomainEvents
         ValidToDate = validToDate;
         TransactionId = transactionId;
         TransactionTime = transactionTime;
+        Price = price;
     }
 
     public Guid SubscriptionId { get; private set; }
@@ -37,9 +39,10 @@ public sealed class ServiceSubscription : BaseEntity<Guid>, IDomainEvents
     public Guid TransactionId { get; private set; }
     public DateTime TransactionTime { get; private set; }
     public ICollection<License> Licenses { get; } = [];
+    public decimal Price { get; private set; }
 
-    public static ServiceSubscription Create(Guid accountId, Guid subscriptionId, string softwareServiceName, DateTime validToDate, Guid transactionId, DateTime transactionTime)
-        => new(Guid.NewGuid(), accountId, subscriptionId, softwareServiceName, validToDate, transactionId, transactionTime);
+    public static ServiceSubscription Create(Guid accountId, Guid subscriptionId, string softwareServiceName, DateTime validToDate, Guid transactionId, DateTime transactionTime, decimal price)
+        => new(Guid.NewGuid(), accountId, subscriptionId, softwareServiceName, validToDate, transactionId, transactionTime, price);
 
     public void SetStateToInactive()
     {

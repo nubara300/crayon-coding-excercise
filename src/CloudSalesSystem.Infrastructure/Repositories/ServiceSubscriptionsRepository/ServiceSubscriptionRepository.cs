@@ -1,5 +1,6 @@
 ﻿using CloudSalesSystem.Domain.Interfaces.Repositories;
 using CloudSalesSystem.Domain.Models.ServiceSubscriptions;
+using Microsoft.EntityFrameworkCore;
 
 namespace CloudSalesSystem.Infrastructure.Repositories.ServiceSubscriptionsRepository;
 
@@ -7,6 +8,10 @@ public class ServiceSubscriptionRepository(AppDbContext context) : BaseRepositor
 {
     public async Task<List<ServiceSubscription>> GetByCustomerId(Guid customerId)
     {
-        return await GetListAsync(x => x.CreatedById == customerId);
+        return await context.ServiceSubscriptions
+            .AsNoTracking()
+            .Include(x => x.Licenses)
+            .Where(x => x.CreatedById == customerId)
+            .ToListAsync();
     }
 }

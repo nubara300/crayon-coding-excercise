@@ -51,7 +51,7 @@ namespace CCPService
                 return new OrderServiceResponse(false, "License for this software is not valid for requested expiration date", null, null);
             }
 
-            var pursachedSoftware = new PurchasedSoftware(softwareService.Id, softwareService.Name, request.Quantity, softwareService.ValidToDate, Guid.NewGuid(), DateTime.UtcNow);
+            var pursachedSoftware = new PurchasedSoftware(softwareService.Id, softwareService.Name, request.Quantity, softwareService.ValidToDate, Guid.NewGuid(), DateTime.UtcNow, softwareService.Price);
             PurchasedSoftwares.Add(pursachedSoftware);
 
             return new OrderServiceResponse(true, "Order placed successfully", null, pursachedSoftware);

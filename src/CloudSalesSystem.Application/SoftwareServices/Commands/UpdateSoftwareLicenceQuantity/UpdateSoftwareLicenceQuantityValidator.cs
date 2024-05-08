@@ -1,15 +1,11 @@
-﻿using CloudSalesSystem.Application.SoftwareServices.Commands.AssignSoftwareService;
-using FluentValidation;
+﻿using FluentValidation;
 
 namespace CloudSalesSystem.Application.SoftwareServices.Commands.UpdateSoftwareLicenceQuantity;
 
-public class PursacheSoftwareServiceValidator : AbstractValidator<PursacheSoftwareServiceCommand>
+public class PursacheSoftwareServiceValidator : AbstractValidator<UpdateSoftwareLicenceQuantityCommand>
 {
     public PursacheSoftwareServiceValidator()
     {
-        RuleFor(x => x.AccountId).NotNull();
         RuleFor(x => x.SubscriptionId).NotNull();
-        RuleFor(x => x.Quantity).NotNull().GreaterThan(0);
-        RuleFor(x => x.ValidToDate).NotNull().GreaterThan(DateTime.UtcNow);
     }
 }

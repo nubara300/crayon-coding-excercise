@@ -9,7 +9,7 @@ namespace CloudSalesSystem.Infrastructure.ServiceContexts
 
         public Guid GetCurrentUserId()
         {
-            var userId = CLoudSalesConstants.CustomerId;
+            var userId = CloudSalesConstants.CustomerId;
             return userId;
             // Example: Retrieving user id from claims
             // should be added after some sort of identity is added to the solution

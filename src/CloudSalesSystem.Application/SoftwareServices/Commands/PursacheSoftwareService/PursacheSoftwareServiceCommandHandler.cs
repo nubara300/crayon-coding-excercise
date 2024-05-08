@@ -72,7 +72,8 @@ namespace CloudSalesSystem.Application.SoftwareServices.Commands.PursacheSoftwar
             return ServiceSubscription.Create(accountId,
                     purchasedSoftware.SubscriptionId, purchasedSoftware.ServiceName,
                     purchasedSoftware.ValidToDate, purchasedSoftware.TransactionId,
-                    purchasedSoftware.TransactionTime);
+                    purchasedSoftware.TransactionTime,
+                    purchasedSoftware.Price);
         }
     }
 }
